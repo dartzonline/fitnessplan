@@ -1,0 +1,202 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A01 /* FitDadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01 /* FitDadApp.swift */; };
+		A02 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02 /* Models.swift */; };
+		A03 /* PlanData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03 /* PlanData.swift */; };
+		A04 /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04 /* HealthKitService.swift */; };
+		A05 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05 /* NotificationService.swift */; };
+		A06 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06 /* ContentView.swift */; };
+		A07 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07 /* DashboardView.swift */; };
+		A08 /* WorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08 /* WorkoutsView.swift */; };
+		A09 /* NutritionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09 /* NutritionView.swift */; };
+		A10 /* HabitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10 /* HabitsView.swift */; };
+		A11 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11 /* ProgressView.swift */; };
+		A12 /* SharedComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12 /* SharedComponents.swift */; };
+		A13 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13 /* HealthKit.framework */; };
+		A14 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B14 /* UserNotifications.framework */; };
+                A15 /* AICoachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15V /* AICoachView.swift */; };
+                A16 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16 /* SettingsView.swift */; };
+                A17 /* PlanSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17 /* PlanSetupView.swift */; };
+                A18 /* AIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18 /* AIService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B01 /* FitDadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitDadApp.swift; sourceTree = "<group>"; };
+		B02 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models/Models.swift; sourceTree = "<group>"; };
+		B03 /* PlanData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models/PlanData.swift; sourceTree = "<group>"; };
+		B04 /* HealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/HealthKitService.swift; sourceTree = "<group>"; };
+		B05 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/NotificationService.swift; sourceTree = "<group>"; };
+		B06 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/ContentView.swift; sourceTree = "<group>"; };
+		B07 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/DashboardView.swift; sourceTree = "<group>"; };
+		B08 /* WorkoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/WorkoutsView.swift; sourceTree = "<group>"; };
+		B09 /* NutritionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/NutritionView.swift; sourceTree = "<group>"; };
+		B10 /* HabitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/HabitsView.swift; sourceTree = "<group>"; };
+		B11 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/ProgressView.swift; sourceTree = "<group>"; };
+		B12 /* SharedComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/SharedComponents.swift; sourceTree = "<group>"; };
+		B13 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		B14 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		B15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Resources/Info.plist; sourceTree = "<group>"; };
+		PROD /* FitDadApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitDadApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+                B15V /* AICoachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/AICoachView.swift; sourceTree = "<group>"; };
+                B16 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/SettingsView.swift; sourceTree = "<group>"; };
+                B17 /* PlanSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/PlanSetupView.swift; sourceTree = "<group>"; };
+                B18 /* AIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/AIService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FW01 = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (A13, A14);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ROOT = {
+			isa = PBXGroup;
+			children = (MAINGRP, FWGRP, PRODGRP);
+			sourceTree = "<group>";
+		};
+		MAINGRP = {
+			isa = PBXGroup;
+			children = (B01, B02, B03, B04, B05, B06, B07, B08, B09, B10, B11, B12, B15, B15V, B16, B17, B18);
+			path = FitDadApp;
+			sourceTree = "<group>";
+		};
+		FWGRP = {
+			isa = PBXGroup;
+			children = (B13, B14);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		PRODGRP = {
+			isa = PBXGroup;
+			children = (PROD);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		TGT01 = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFGLIST;
+			buildPhases = (SRC01, FW01, RES01);
+			buildRules = ();
+			dependencies = ();
+			name = FitDadApp;
+			productName = FitDadApp;
+			productReference = PROD;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		PROJ = {
+			isa = PBXProject;
+			attributes = {LastSwiftUpdateCheck = 1500; LastUpgradeCheck = 1500; };
+			buildConfigurationList = PROJCFG;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (en, Base);
+			mainGroup = ROOT;
+			productRefGroup = PRODGRP;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (TGT01);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		RES01 = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = ();
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		SRC01 = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (A01, A02, A03, A04, A05, A06, A07, A08, A09, A10, A11, A12, A15, A16, A17, A18);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CFG_DBG = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = FitDadApp/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourname.FitDadApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		CFG_REL = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = FitDadApp/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourname.FitDadApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		PROJCFG_DBG = {isa = XCBuildConfiguration; buildSettings = {}; name = Debug; };
+		PROJCFG_REL = {isa = XCBuildConfiguration; buildSettings = {}; name = Release; };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CFGLIST = {
+			isa = XCConfigurationList;
+			buildConfigurations = (CFG_DBG, CFG_REL);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		PROJCFG = {
+			isa = XCConfigurationList;
+			buildConfigurations = (PROJCFG_DBG, PROJCFG_REL);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = PROJ;
+}
