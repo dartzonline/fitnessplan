@@ -15,7 +15,17 @@ struct FitDadApp: App {
             AIFeedbackEntry.self,
         ])
         let config = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-        return try! ModelContainer(for: schema, configurations: [config])
+        do {
+            return try ModelContainer(for: schema, configurations: [config])
+        } catch {
+            // Schema changed — delete the old store and start fresh
+            let storeURL = config.url
+            let base = storeURL.path
+            for suffix in ["", "-wal", "-shm"] {
+                try? FileManager.default.removeItem(atPath: base + suffix)
+            }
+            return try! ModelContainer(for: schema, configurations: [config])
+        }
     }()
 
     var body: some Scene {
