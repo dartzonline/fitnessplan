@@ -38,9 +38,6 @@ final class HealthKitService: ObservableObject {
     }
 
     func requestAuthorization() {
-        #if targetEnvironment(macCatalyst)
-        return
-        #else
         guard HKHealthStore.isHealthDataAvailable() else { return }
         store.requestAuthorization(toShare: nil, read: readTypes) { [weak self] success, _ in
             DispatchQueue.main.async {
@@ -48,7 +45,6 @@ final class HealthKitService: ObservableObject {
                 if success { self?.startRefreshing() }
             }
         }
-        #endif
     }
 
     func startRefreshing() {
