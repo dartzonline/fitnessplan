@@ -4,10 +4,16 @@
 <dict>
 	<key>CFBundleDisplayName</key>
 	<string>FitDad</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.yourname.FitDadApp</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>FitDadApp</string>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
@@ -16,14 +22,14 @@
 	<string>FitDad reads your steps, heart rate, sleep, calories, weight, and nutrition data (calories, protein, carbs, fat) from Apple Health. Nutrition data syncs automatically from MyFitnessPal, Cronometer, Lose It, and other food tracking apps you use.</string>
 	<key>NSHealthUpdateUsageDescription</key>
 	<string>FitDad does not write to Apple Health.</string>
-	<key>UIRequiredDeviceCapabilities</key>
-	<array>
-		<string>healthkit</string>
-	</array>
 	<key>NSUserNotificationsUsageDescription</key>
 	<string>FitDad sends you daily reminders to log meals, hit your step goal, and complete your workouts.</string>
 	<key>UILaunchScreen</key>
 	<dict/>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>healthkit</string>
+	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
