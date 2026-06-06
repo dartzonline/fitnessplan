@@ -14,17 +14,20 @@ struct FitDadApp: App {
             UserProfile.self,
             AIFeedbackEntry.self,
         ])
-        let config = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+        // Named store — changing the name forces a fresh DB when schema is incompatible
+        let config = ModelConfiguration("FitDadV2", schema: schema, isStoredInMemoryOnly: false)
         do {
             return try ModelContainer(for: schema, configurations: [config])
         } catch {
-            // Schema changed — delete the old store and start fresh
-            let storeURL = config.url
-            let base = storeURL.path
+            // Fallback: delete the store file and recreate
+            let base = config.url.path
             for suffix in ["", "-wal", "-shm"] {
                 try? FileManager.default.removeItem(atPath: base + suffix)
             }
-            return try! ModelContainer(for: schema, configurations: [config])
+            // If still failing, run in-memory so app doesn't crash
+            let memConfig = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
+            return (try? ModelContainer(for: schema, configurations: [memConfig]))
+                ?? { fatalError("SwiftData init failed: \(error)") }()
         }
     }()
 
