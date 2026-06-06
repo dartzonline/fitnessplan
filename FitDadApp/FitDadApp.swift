@@ -14,21 +14,32 @@ struct FitDadApp: App {
             UserProfile.self,
             AIFeedbackEntry.self,
         ])
-        // Named store — changing the name forces a fresh DB when schema is incompatible
-        let config = ModelConfiguration("FitDadV2", schema: schema, isStoredInMemoryOnly: false)
-        do {
-            return try ModelContainer(for: schema, configurations: [config])
-        } catch {
-            // Fallback: delete the store file and recreate
-            let base = config.url.path
+
+        // Proactively wipe any previous store files to avoid migration crashes
+        func nukeStore(named name: String) {
+            guard let appSupport = FileManager.default.urls(
+                for: .applicationSupportDirectory, in: .userDomainMask).first else { return }
+            let base = appSupport.appendingPathComponent("\(name).store").path
             for suffix in ["", "-wal", "-shm"] {
                 try? FileManager.default.removeItem(atPath: base + suffix)
             }
-            // If still failing, run in-memory so app doesn't crash
-            let memConfig = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
-            return (try? ModelContainer(for: schema, configurations: [memConfig]))
-                ?? { fatalError("SwiftData init failed: \(error)") }()
         }
+
+        // Try persistent store first
+        let config = ModelConfiguration("FitDadV3", schema: schema, isStoredInMemoryOnly: false)
+        if let container = try? ModelContainer(for: schema, configurations: [config]) {
+            return container
+        }
+
+        // Persistent failed — nuke and retry
+        nukeStore(named: "FitDadV3")
+        if let container = try? ModelContainer(for: schema, configurations: [config]) {
+            return container
+        }
+
+        // Last resort: in-memory (data won't persist between launches but app won't crash)
+        let memConfig = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
+        return try! ModelContainer(for: schema, configurations: [memConfig])
     }()
 
     var body: some Scene {
